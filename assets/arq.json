@@ -1,0 +1,144 @@
+{
+  "movie": [
+    {
+      "id": 0,
+      "name": "Resident Evil - The Final Chapter",
+      "description": "Sobrevivente do massacre zumbi, Alice retorna para onde o pesadelo começou, Raccoon City, em que a Umbrella Corporation reúne suas forças para um ataque final contra os remanescentes do apocalipse. Para vencer a dura batalha final e salvar a raça humana, a heroína recruta velhos e novos amigos.",
+      "year": "2017",
+      "rating": 4,
+      "image" : "resident.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Cruella ",
+      "description": "Inteligente, criativa e determinada, Estella quer fazer um nome para si através de seus designs e acaba chamando a atenção da Baronesa Von Hellman. Entretanto, o relacionamento delas desencadeia um curso de eventos e revelações que fazem com que Estella abrace seu lado rebelde e se torne a Cruella, uma pessoa má, elegante e voltada para a vingança.",
+      "year": "2021",
+      "rating": 5,
+      "image" : "cruella.jpg"
+
+    },
+    {
+      "id": 2,
+      "name": "Kodzila vs Kong",
+      "description": "ong e seus protetores embarcam em uma jornada perigosa para encontrar seu verdadeiro lar. Jia, uma garota órfã que tem um vínculo único e poderoso com a poderosa besta, acompanha a aventura.",
+      "year": "2021",
+      "rating": 3,
+      "image" : "king.jpg"
+
+    },
+    {
+      "id": 3,
+      "name": "Velozes e Furiosos 9",
+      "description": "O longa vem dando continuidade às corridas eletrizantes da equipe de amigos liderada por Dominic Toretto.",
+      "year": "2021",
+      "rating": 3,
+      "image" : "velozes.jpg"
+
+    },
+    {
+      "id": 4,
+      "name": "Viúva Negra",
+      "description": "Ao nascer, a Viúva Negra, então conhecida como Natasha Romanova, é entregue à KGB, que a prepara para se tornar sua agente suprema. Porém, o seu próprio governo tenta matá-la quando a União Soviética se desfaz.",
+      "year": "2021",
+      "rating": 5,
+      "image" : "viuva.jpg"
+
+    }
+  ],
+  "music": [
+    {
+      "id": 0,
+      "name": "good 4 u",
+      "artist": "Olivia Rodrigo",
+      "gender": "Pop",
+      "album": "Sour",
+      "year": "2021",
+      "rating": 5,
+      "image" : "sour.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Butter",
+      "artist": "BTS",
+      "gender": "K-Pop",
+      "album": "",
+      "year": "2021",
+      "rating": 4,
+      "image" : "butter.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Levitating",
+      "artist": "Dua Lipa",
+      "gender": "Pop",
+      "album": "Future Nostalgia",
+      "year": "2020",
+      "rating": 5,
+      "image" : "dua.jpg"
+    },
+    {
+      "id": 3,
+      "name": "DÁKITI",
+      "artist": "Bad Bunny",
+      "gender": "Reggaeton",
+      "album": "El Último Tour Del Mundo",
+      "year": "2020",
+      "rating": 4,
+      "image" : "badbunny.png"
+    },
+    {
+      "id": 4,
+      "name": "In Your Eyes",
+      "artist": "The Weeknd",
+      "gender": "R&B/Soul",
+      "album": "After Hours",
+      "year": "2020",
+      "rating": 5,
+      "image" : "after.jpg"
+    }
+  ],
+
+  "book": [
+
+    {
+      "id": 0,
+      "name": "Crônicas De Gelo e Fogo - Guerra dos Tronos",
+      "description": "A Game of Thrones é o primeiro livro da série de fantasia épica As Crônicas de Gelo e Fogo, escrita pelo norte-americano George R. R. Martin e publicada pela editora Bantam Spectra.",
+      "year": "1996",
+      "rating": 5,
+      "image" : "cronicas.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Harry Potter - e as relíquias da morte.",
+      "description": "Harry Potter and the Deathly Hallows é um romance de fantasia escrito pela britânica J. K. Rowling. É o sétimo e último livro da série Harry Potter.",
+      "year": "2007",
+      "rating": 5,
+      "image" : "harry.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Inferno: Coleção de Arte",
+      "description": "Inferno - A Coleção de Arte, de Dino Di Durante é um livro de arte composto por 72 pinturas baseadas na primeira parte da obra-prima literária - A Divina Comédia",
+      "year": "2014",
+      "rating": 5,
+      "image" : "inferno.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Fortaleza digital",
+      "description": "Fortaleza Digital de Dan Brown é o primeiro livro do escritor estadunidense, anterior aos best-sellers O Código da Vinci e a Anjos e Demônios.",
+      "year": "1998",
+      "rating": 5,
+      "image" : "fortaleza.jpg"
+    },
+    {
+      "id": 4,
+      "name": "A Culpa é das Estrelas",
+      "description": "Mas com a chegada repentina ao Grupo de Apoio dos Miúdos com Cancro de uma atraente reviravolta de seu nome Augustus Waters, a história de Hazel vê-se agora prestes a ser completamente rescrita.",
+      "year": "2014",
+      "rating": 5,
+      "image" : "culpa.jpg"
+    }
+  ]
+}

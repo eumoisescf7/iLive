@@ -28,6 +28,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  sqflite: ^2.0.0+3
+  path_provider: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +40,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -52,6 +55,22 @@ flutter:
     - images/logo_size.jpg
     - images/logo_size_invert.jpg
     - images/mesa.jpg
+    - images/after.jpg
+    - images/badbunny.png
+    - images/butter.jpg
+    - images/dua.jpg
+    - images/sour.jpg
+    - assets/arq.json
+    - images/cronicas.jpg
+    - images/cruella.jpg
+    - images/culpa.jpg
+    - images/fortaleza.jpg
+    - images/king.jpg
+    - images/inferno.jpg
+    - images/resident.jpg
+    - images/velozes.jpg
+    - images/viuva.jpg
+    - images/harry.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
