@@ -47,48 +47,50 @@ class _MusicPageState extends State<MusicPage> {
                       showDialog(
                           context: context,
                           builder: (context) {
-                            return AlertDialog(
+                            return SingleChildScrollView(
+                              padding: EdgeInsets.all(10),
+                              child: AlertDialog(
 
-                              title: Image.asset(
-                                "images/${_listaMusicas[index]["image"]}",
-                                height: 100.0,
-                                width: 60.0,
-                              ),
-
-                              titlePadding: EdgeInsets.all(20),
-                              titleTextStyle: TextStyle(
-                                fontSize: 20,
-                                color: Colors.deepOrange
-                              ),
-                              content: Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                                  children: [
-                                    Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: [
-                                        Text(_listaMusicas[index]["name"],
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.deepOrange
-                                        ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                    padding: const EdgeInsets.only(top: 10, bottom: 10),
-                                    ),
-                                    Text("Artista: "+_listaMusicas[index]["artist"]),
-                                    Text("Gênero: "+_listaMusicas[index]["gender"]),
-                                    Text("Álbum: "+_listaMusicas[index]["album"]),
-                                    Text("Ano de Lançamento: "+_listaMusicas[index]["year"]),
-                                  ],
+                                title: Image.asset(
+                                  "images/${_listaMusicas[index]["image"]}",
+                                  height: 100.0,
+                                  width: 60.0,
                                 ),
-                              ),
-                              actions: <Widget>[
-                                TextButton(
+
+                                titlePadding: EdgeInsets.all(20),
+                                titleTextStyle: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.deepOrange
+                                ),
+                                content: Center(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    children: [
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          Text(_listaMusicas[index]["name"],
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.deepOrange
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10, bottom: 10),
+                                      ),
+                                      Text("Artista: "+_listaMusicas[index]["artist"]),
+                                      Text("Gênero: "+_listaMusicas[index]["gender"]),
+                                      Text("Álbum: "+_listaMusicas[index]["album"]),
+                                      Text("Ano de Lançamento: "+_listaMusicas[index]["year"]),
+                                    ],
+                                  ),
+                                ),
+                                actions: <Widget>[
+                                  TextButton(
                                     onPressed: (){
                                       Navigator.pop(context);
                                     },
@@ -96,8 +98,9 @@ class _MusicPageState extends State<MusicPage> {
                                     style: TextButton.styleFrom(
                                       primary: Colors.deepOrange,
                                     ),
-                                ),
-                              ],
+                                  ),
+                                ],
+                              ),
                             );
                           }
                       );

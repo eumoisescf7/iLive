@@ -25,6 +25,7 @@ class _CadastrarUsuarioPageState extends State<CadastrarUsuarioPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Cadastro"),
         backgroundColor: Color(0xffba3d07),
       ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:i_live_project/pages/LoginPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:i_live_project/pages/MainPage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -7,6 +9,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  Future _verificarUsuarioLogado() async {
+
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User currentUser =  await auth.currentUser;
+
+    if(currentUser != null){
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => MainPage())
+      ).catchError((onError){
+        print("ERRO"+ onError.toString());
+      });
+    }
+  }
+
+
+  @override
+  void initState() {
+    super.initState();
+    _verificarUsuarioLogado();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

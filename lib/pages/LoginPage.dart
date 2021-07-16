@@ -22,29 +22,6 @@ class _LoginPageState extends State<LoginPage> {
   Usuario usuario = new Usuario();
   var _login = LoginService();
 
-  Future _verificarUsuarioLogado() async {
-
-    FirebaseAuth auth = FirebaseAuth.instance;
-    User currentUser =  await auth.currentUser;
-
-    if(currentUser != null){
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => MainPage())
-      ).catchError((onError){
-        print("ERRO"+ onError.toString());
-      });
-    }
-  }
-
-  @override
-  void initState(){
-    _verificarUsuarioLogado();
-    super.initState();
-  }
-
-
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -172,11 +149,12 @@ class _LoginPageState extends State<LoginPage> {
                                 usuario.password = _controllerSenha.text;
                               });
                               _login.realizarLogin(usuario)
-                                  .then((value) => Navigator.pushReplacement(
+                                  .then((value) => Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => MainPage())
                               )).catchError((onError){
+                                _controllerSenha.clear();
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text('Erro ao logar, verifique os dados.'),

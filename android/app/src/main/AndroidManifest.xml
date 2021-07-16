@@ -2,8 +2,8 @@
     package="moisescarlos.projectflutter.i_live_project">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
-        android:label="i_live_project"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Ilive"
+        android:icon="@mipmap/ilive">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

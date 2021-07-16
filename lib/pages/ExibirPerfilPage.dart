@@ -149,12 +149,16 @@ class _ExibirPerfilPageState extends State<ExibirPerfilPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.grey,
-          //opacity: 1
+        backgroundColor: Color(CorAppUtil.corApp),
+        centerTitle: true,
+        title: Text(
+          "Perfil",
+          style: TextStyle(
+                color: Colors.white,
+
+            ),
+          ),
         ),
-        backgroundColor: Colors.white,
-      ),
       body: Container(
         padding: EdgeInsets.all(16),
         child : SingleChildScrollView(
@@ -237,58 +241,64 @@ class _ExibirPerfilPageState extends State<ExibirPerfilPage> {
                 ],
               ),
             ),
-              Padding(
-                padding: EdgeInsets.only(top: 80),
-                child: ElevatedButton(
-                  child: Text(
-                    "Salvar",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 45, vertical: 10),
-                      primary: Color(CorAppUtil.corApp),
-                      textStyle: TextStyle(
-                          fontSize: 15,
-                      )
-                  ),
-                  onPressed: (){
-                    _atualizarNomeFirebase();
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 100),
+                    child: ElevatedButton(
+                      child: Text(
+                        "Salvar",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                          primary: Color(CorAppUtil.corApp),
+                          textStyle: TextStyle(
+                            fontSize: 15,
+                          )
+                      ),
+                      onPressed: (){
+                        _atualizarNomeFirebase();
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text('Atualizações salvas!'),
                             duration: Duration(seconds: 1),
                           ),
                         );},
-                ),
-              ),
-            Padding(
-                padding: EdgeInsets.only(top: 5),
-                child: ElevatedButton(
-                  child: Text(
-                    "Sair",
-                    style: TextStyle(
-                      color: Color(CorAppUtil.corApp),
                     ),
                   ),
-                  style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 55, vertical: 10),
-                      primary: Colors.white,
-                      textStyle: TextStyle(
-                          fontSize: 15
-                      )
+                  Padding(
+                    padding: EdgeInsets.only(top: 100, left: 10),
+                    child: ElevatedButton(
+                      child: Text(
+                        "Sair",
+                        style: TextStyle(
+                          color: Color(CorAppUtil.corApp),
+                        ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+                          primary: Colors.white,
+                          textStyle: TextStyle(
+                              fontSize: 15
+                          )
+                      ),
+                      onPressed: (){
+                        _login.logout().then((value) => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage())
+                        )).catchError((onError){
+                          print("ERRO"+ onError.toString());
+                        });
+                      },
+                    ),
                   ),
-                  onPressed: (){
-                    _login.logout().then((value) => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePage())
-                    )).catchError((onError){
-                      print("ERRO"+ onError.toString());
-                    });
-                  },
-                ),
+                ],
               ),
             ],
           ),

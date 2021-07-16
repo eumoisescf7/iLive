@@ -19,6 +19,8 @@ class _RecuperarSenhaPageState extends State<RecuperarSenhaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        title: Text("Recuperar Senha"),
         backgroundColor: Color(CorAppUtil.corApp),
       ),
       backgroundColor: Colors.white,
