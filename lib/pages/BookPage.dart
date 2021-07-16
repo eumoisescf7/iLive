@@ -2,30 +2,27 @@ import 'dart:convert';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-
-class Music extends StatefulWidget {
+class BookPage extends StatefulWidget {
   @override
-  _MusicState createState() => _MusicState();
+  _BookPageState createState() => _BookPageState();
 }
 
-class _MusicState extends State<Music> {
+class _BookPageState extends State<BookPage> {
 
-  List _listaMusicas = [];
+  List _listaLivros = [];
 
   Future<void> readJson() async {
     final String response = await rootBundle.loadString('assets/arq.json');
     final data = await json.decode(response);
 
     setState(() {
-      _listaMusicas = data["music"];
+      _listaLivros = data["book"];
     });
     // ...
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     readJson();
     return Scaffold(
       body: Padding(
@@ -33,9 +30,9 @@ class _MusicState extends State<Music> {
         child: Column(
           children: [
             // Display the data loaded from sample.json
-            _listaMusicas.length > 0 ? Expanded(
+            _listaLivros.length > 0 ? Expanded(
               child: ListView.separated(
-                itemCount: _listaMusicas.length,
+                itemCount: _listaLivros.length,
                 separatorBuilder: (context, index) => Divider(
                   /*height: 20,
                   color: Colors.white,*/
@@ -47,18 +44,20 @@ class _MusicState extends State<Music> {
                       showDialog(
                           context: context,
                           builder: (context) {
-                            return AlertDialog(
+                            return  SingleChildScrollView(
+                                padding: EdgeInsets.all(10),
+                            child: AlertDialog(
 
                               title: Image.asset(
-                                "images/${_listaMusicas[index]["image"]}",
+                                "images/${_listaLivros[index]["image"]}",
                                 height: 100.0,
                                 width: 60.0,
                               ),
 
                               titlePadding: EdgeInsets.all(20),
                               titleTextStyle: TextStyle(
-                                fontSize: 20,
-                                color: Colors.deepOrange
+                                  fontSize: 20,
+                                  color: Colors.deepOrange
                               ),
                               content: Center(
                                 child: Column(
@@ -69,47 +68,46 @@ class _MusicState extends State<Music> {
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [
-                                        Text(_listaMusicas[index]["name"],
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.deepOrange
-                                        ),
+                                        Text(_listaLivros[index]["name"],
+                                          style: TextStyle(
+                                              fontSize: 20,
+                                              color: Colors.deepOrange
+                                          ),
                                         ),
                                       ],
                                     ),
                                     Padding(
-                                    padding: const EdgeInsets.only(top: 10, bottom: 10),
+                                      padding: const EdgeInsets.only(top: 10, bottom: 10),
                                     ),
-                                    Text("Artista: "+_listaMusicas[index]["artist"]),
-                                    Text("Gênero: "+_listaMusicas[index]["gender"]),
-                                    Text("Álbum: "+_listaMusicas[index]["album"]),
-                                    Text("Ano de Lançamento: "+_listaMusicas[index]["year"]),
+                                    Text("Sinopse: "+_listaLivros[index]["description"]),
+                                    Text("Ano de Lançamento: "+_listaLivros[index]["year"]),
                                   ],
                                 ),
                               ),
                               actions: <Widget>[
                                 TextButton(
-                                    onPressed: (){
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text("Fechar"),
-                                    style: TextButton.styleFrom(
-                                      primary: Colors.deepOrange,
-                                    ),
+                                  onPressed: (){
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text("Fechar"),
+                                  style: TextButton.styleFrom(
+                                    primary: Colors.deepOrange,
+                                  ),
                                 ),
                               ],
+                            )
                             );
                           }
                       );
                     },
                     child: ListTile(
-                        leading: SizedBox(
-                            height: 100.0,
-                            width: 80.0, // fixed width and height
-                            child: Image.asset("images/${_listaMusicas[index]["image"]}")
-                        ),
-                      title: Text(_listaMusicas[index]["name"]),
-                      subtitle: Text(_listaMusicas[index]["artist"]),
+                      leading: SizedBox(
+                          height: 100.0,
+                          width: 80.0, // fixed width and height
+                          child: Image.asset("images/${_listaLivros[index]["image"]}")
+                      ),
+                      title: Text(_listaLivros[index]["name"]),
+                      subtitle: Text(_listaLivros[index]["description"]),
                     ),
                   );
                 },

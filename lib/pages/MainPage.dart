@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:i_live_project/pages/ExibirPerfil.dart';
-import 'package:i_live_project/pages/Movie.dart';
-import 'package:i_live_project/pages/Music.dart';
-import 'package:i_live_project/pages/Book.dart';
+import 'package:i_live_project/pages/ExibirPerfilPage.dart';
+import 'package:i_live_project/pages/MoviePage.dart';
+import 'package:i_live_project/pages/MusicPage.dart';
+import 'package:i_live_project/pages/BookPage.dart';
 import 'package:i_live_project/data/ConectDB.dart';
+import 'package:i_live_project/util/CorAppUtil.dart';
+
 
 class MainPage extends StatefulWidget {
   @override
@@ -16,11 +18,10 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-
     List<Widget> pages = [
-      Movie(),
-      Music(),
-      Book()
+      MoviePage(),
+      MusicPage(),
+      BookPage()
     ];
 
     return  Scaffold(
@@ -44,11 +45,12 @@ class _MainPageState extends State<MainPage> {
           ),
           IconButton(
             icon: Icon(Icons.account_circle),
+            color: Color(CorAppUtil.corApp),
             onPressed: (){
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ExibirPerfil())
+                      builder: (context) => ExibirPerfilPage())
               );
             },
           ),
@@ -62,9 +64,10 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         //type: BottomNavigationBarType.shifting, //mais de tres navigationBar
           type: BottomNavigationBarType.fixed, //até três navigationBar
-          fixedColor: Color(0xffba3d07),
+          fixedColor: Color(CorAppUtil.corApp),
           currentIndex: _indiceAtual,
           onTap: (indice){
+            print(indice);
             setState(() {
               _indiceAtual = indice;
             });

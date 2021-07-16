@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:i_live_project/pages/Login.dart';
+import 'package:i_live_project/pages/LoginPage.dart';
 
-class Home extends StatefulWidget {
+class HomePage extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomeState extends State<Home> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Login())
+                              builder: (context) => LoginPage())
                       );
                     },
                   )

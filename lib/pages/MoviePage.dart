@@ -1,28 +1,32 @@
 import 'dart:convert';
 import 'dart:async';
+import 'package:i_live_project/models/FilmeModel.dart';
 import 'package:flutter/material.dart';
+import 'package:i_live_project/data/DataSet.dart';
 import 'package:flutter/services.dart' show rootBundle;
-class Book extends StatefulWidget {
+
+
+class MoviePage extends StatefulWidget {
   @override
-  _BookState createState() => _BookState();
+  _MoviePageState createState() => _MoviePageState();
 }
 
-class _BookState extends State<Book> {
-
-  List _listaLivros = [];
+class _MoviePageState extends State<MoviePage> {
+  List _listaFilmes = [];
 
   Future<void> readJson() async {
     final String response = await rootBundle.loadString('assets/arq.json');
     final data = await json.decode(response);
 
     setState(() {
-      _listaLivros = data["book"];
+      _listaFilmes = data["movie"];
     });
     // ...
   }
 
   @override
   Widget build(BuildContext context) {
+
     readJson();
     return Scaffold(
       body: Padding(
@@ -30,9 +34,9 @@ class _BookState extends State<Book> {
         child: Column(
           children: [
             // Display the data loaded from sample.json
-            _listaLivros.length > 0 ? Expanded(
+            _listaFilmes.length > 0 ? Expanded(
               child: ListView.separated(
-                itemCount: _listaLivros.length,
+                itemCount: _listaFilmes.length,
                 separatorBuilder: (context, index) => Divider(
                   /*height: 20,
                   color: Colors.white,*/
@@ -45,11 +49,11 @@ class _BookState extends State<Book> {
                           context: context,
                           builder: (context) {
                             return  SingleChildScrollView(
-                                padding: EdgeInsets.all(10),
-                            child: AlertDialog(
+                             padding: EdgeInsets.all(10),
+                                child: AlertDialog(
 
                               title: Image.asset(
-                                "images/${_listaLivros[index]["image"]}",
+                                "images/${_listaFilmes[index]["image"]}",
                                 height: 100.0,
                                 width: 60.0,
                               ),
@@ -61,14 +65,14 @@ class _BookState extends State<Book> {
                               ),
                               content: Center(
                                 child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.stretch,
                                   children: [
                                     Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [
-                                        Text(_listaLivros[index]["name"],
+                                        Text(_listaFilmes[index]["name"],
                                           style: TextStyle(
                                               fontSize: 20,
                                               color: Colors.deepOrange
@@ -79,8 +83,8 @@ class _BookState extends State<Book> {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 10, bottom: 10),
                                     ),
-                                    Text("Sinopse: "+_listaLivros[index]["description"]),
-                                    Text("Ano de Lançamento: "+_listaLivros[index]["year"]),
+                                    Text("Descrição: "+_listaFilmes[index]["description"]),
+                                    Text("Ano de Lancamento: "+_listaFilmes[index]["year"]),
                                   ],
                                 ),
                               ),
@@ -103,11 +107,11 @@ class _BookState extends State<Book> {
                     child: ListTile(
                       leading: SizedBox(
                           height: 100.0,
-                          width: 80.0, // fixed width and height
-                          child: Image.asset("images/${_listaLivros[index]["image"]}")
+                          width: 100.0, // fixed width and height
+                          child: Image.asset("images/${_listaFilmes[index]["image"]}")
                       ),
-                      title: Text(_listaLivros[index]["name"]),
-                      subtitle: Text(_listaLivros[index]["description"]),
+                      title: Text(_listaFilmes[index]["name"]),
+                      subtitle: Text(_listaFilmes[index]["description"]),
                     ),
                   );
                 },
@@ -120,3 +124,6 @@ class _BookState extends State<Book> {
     );
   }
 }
+
+
+
