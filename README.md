@@ -10,7 +10,7 @@ Este primeiro vídeo tem como principal objetivo mostra de forma rápida a ideia
 
 - [Pitch ILIVE](https://www.youtube.com/watch?v=m8ei3NG0f-o)
 
-
+Estou outro vídeo, mostra de forma clara o funcionamento de todos os recursos dentro do aplicativo.
 
 - [Funcionamento do App ILIVE](https://youtu.be/wwrqDhepc04)
 
