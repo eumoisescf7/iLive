@@ -102,7 +102,10 @@ Estou outro vídeo, mostra de forma clara o funcionamento de todos os recursos d
 ![](images/LivrosTela.png)
 
 
+## Sobre o desenvolvedor
 
+Moisés Carlos Ferreira: [LinkedIn](https://www.linkedin.com/in/mois%C3%A9s-carlos-44a288130/),
+aluno de Mestrado em Informática Aplicada na UFRPE.
 
 
 
