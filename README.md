@@ -30,4 +30,82 @@ Este primeiro vídeo tem como principal objetivo mostra de forma rápida a ideia
 
 [+Flutter](https://flutter.dev/)
 
-###
+### Logotipo ILIVE
+
+![](images/logo_size.jpg)
+
+### Fluxo Projeto ILIVE
+
+![](images/FluxoTelas.PNG)
+
+### Widgets Tree Pages
+- HomePage
+
+![](images/Home%20Page.png)
+
+- LoginPage
+
+![](images/LoginPage.png)
+
+- RecuperarPage
+
+![](images/RecuperarPage.png)
+
+- MainPage
+
+![](images/MainPage.png)
+
+- PerfilPage
+
+![](images/ExibirPage.png)
+
+- MoviePage, MusicPage e BookPage
+
+![](images/BookPage.PNG)
+
+- CadastroPage
+
+![](images/CadastroPage.png)
+
+### Tela do App (Ilive)
+
+- InicioTela
+
+![](images/InicioTela.png)
+
+- LoginTela
+
+![](images/LoginTela.png)
+
+- RecuperarTela
+
+![](images/RecuperarTela.png)
+
+- PerfilTela
+
+![](images/PerfilTela.png)
+
+- CadastroTela
+
+![](images/CadastroTela.png)
+
+- FilmeTela
+
+![](images/FilmeTela.png)
+
+- MusicasTela
+
+![](images/MusicasTela.png)
+
+- LivrosTela
+
+![](images/LivrosTela.png)
+
+
+
+
+
+
+
+
+
